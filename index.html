@@ -16,37 +16,6 @@
       <meta name="apple-mobile-web-app-status-bar-style" content="default">
       <meta content="" name="description" />
       <meta content="" name="author" />
-
-      <style>
-      body {
-        position: relative;
-        margin: 0;
-        padding: 0;
-      }
-      .fullheight {
-        display: block;
-        position: relative;
-        //   background:#FA463E;
-        height: 100%;
-        width: 100%;
-      }
-      @media (min-width: 768px){
-        .hardfooter {
-          position: fixed;
-          height: 10%;
-          width: 100%;
-          bottom: 0px;
-        }
-      }
-      @media (min-width: 768px){
-        .main-section {
-          position: fixed;
-          height: 90%;
-          width: 100%;
-          top: 0px;
-        }
-      }
-      </style>
       <link href="assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" />
       <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
       <link href="assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
@@ -56,53 +25,49 @@
       <link class="main-stylesheet" href="assets/css/pages-icons.css" rel="stylesheet" type="text/css" />
       <!-- BEGIN PAGES CSS -->
     </head>
-    <body class="pace-dark bg-master-lightest">
+    <body class="pace-dark overflow-hidden bg-master-lightest">
       <div class="fullheight">
-        <section class="bg-master-lightest m-t-20 no-overflow main-section">
+        <section class="bg-master-lightest main-section">
           <div class="container">
-            <div class="md-p-l-20 md-p-r-20 xs-no-padding">
               <div class="row">
                 <div class="col-sm-5  m-t-100 m-b-50 xs-t-10 col-md-offset-1">
-                  <h1 class="light text-danger">Yumist - Homely Meals on Tap</h1>
-
-                  <form class="m-t-25 m-b-10" name="phone_app_download_form" id="phone_app_download_form">
-                    <div class="form-group input-group no-border col-md-12  col-sm-12 col-xs-12">
-                      <span class="input-group-addon bold">+91 - </span>
-                        <input type="text" placeholder="Enter Your Phone Number" class="form-control" name="phone_number">
-                        <span class="input-group-btn">
-                            <button class="btn btn-cons btn-danger" id="download_submit_button" type="Submit">GET THE APP!</button>
-                        </span>
+                    <h1 class="light text-danger">Yumist - <small>Homely Meals on Tap</small></h1>
+                    <form class="m-t-25 m-b-10" name="phone_app_download_form" id="phone_app_download_form">
+                      <div class="form-group input-group no-border col-md-12  col-sm-12 col-xs-12">
+                        <span class="input-group-addon bold">+91 - </span>
+                          <input type="text" placeholder="Enter Your Mobile Number" class="form-control" name="phone_number">
+                          <span class="input-group-btn">
+                              <button class="btn btn-cons btn-danger" id="download_submit_button" type="Submit">GET THE APP!</button>
+                          </span>
                       </div>
-                    <label id="phone_number-error" class="error" for="phone_number"></label>
-                    </form>
-                    <p class="text-black fs-14 text-justify">The Yumist app makes ordering delicious, homely meals a breeze. Just a couple of taps and you're done; it literally takes a few seconds to order and your meal arrives hot and yummy in a matter of minutes. We are servicing select locations in Gurgaon and will be expanding to others very soon.
-                    Our app is currently available on Google Play for Android devices. The iOS and Windows Phone versions are coming soon.</p>
-
-                  </form>
-
-                <br>  <a href="https://play.google.com/store/apps/details?id=com.slashg.yumist&hl=en" target="_blank" class="text-black p-l-10 p-r-10"><i class="fa fa-android fa-3x"></i></a>
-                    <a  data-toggle="modal" data-target="#other_apps" class="text-black hint-text p-l-10 p-r-10"><i class="fa fa-windows fa-3x hint-text"></i></a>   &nbsp;
-                    <a  data-toggle="modal" data-target="#other_apps" class="text-black hint-text p-l-10 p-r-10"><i class="fa fa-apple fa-3x hint-text"></i></a>
-
-                </div>
-                <div class="col-sm-6 no-padding m-t-25 m-b-10 xs-p-l-15 xs-p-r-15">
-                  <div class="content-mask-md">
-                    <div class="device_morph pull-center-inner"  id="iphone01">
-                      <img alt="" class="xs-image-responsive-height image-responsive-width"  src="assets/images/nexu.png">
-                      <div class="screen">
-                        <div class="iphone-border">
-                        <img src="assets/images/mobile_preview.jpg"  style="box-shadow:0px 5px 20px #0000ff;" name="slide" class="image-responsive-height lazy" alt="">
-                      </div>
+                      <label id="phone_number-error" class="error" for="phone_number"></label>
+                      </form>
+                      <p class="text-black fs-14 text-justify">The Yumist app makes ordering delicious, homely meals a breeze. Just a couple of taps and you're done; it literally takes a few seconds to order and your meal arrives hot and yummy in a matter of minutes. We are servicing select locations in Gurgaon and will be expanding to others very soon.
+                      Our app is currently available on Google Play for Android devices. The iOS and Windows Phone versions are coming soon.</p>
+                      <div class="text-center">
+                      <a href="https://play.google.com/store/apps/details?id=com.slashg.yumist&hl=en" target="_blank" class="text-black p-l-10 p-r-10"><i class="fa fa-android fa-3x"></i></a>
+                     <a  data-toggle="modal" data-target="#other_apps" class="text-black hint-text p-l-10 p-r-10"><i class="fa fa-windows fa-3x hint-text"></i></a>   &nbsp;
+                     <a  data-toggle="modal" data-target="#other_apps" class="text-black hint-text p-l-10 p-r-10"><i class="fa fa-apple fa-3x hint-text"></i></a>
+                   </div>
+                   </div>
+                  <div class="col-sm-6 no-padding m-t-35 m-b-10 xs-p-l-15 xs-p-r-15">
+                    <div class="content-mask-md">
+                      <div class="device_morph pull-center-inner"  id="iphone01">
+                        <img alt="" class="xs-image-responsive-height image-responsive-width"  src="assets/images/nexu.png">
+                        <div class="screen">
+                          <div class="iphone-border">
+                          <img src="assets/images/mobile_preview.jpg"  style="box-shadow:0px 5px 20px #0000ff;" name="slide" class="image-responsive-height lazy" alt="">
+                        </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
+
           </div>
         </section>
 
-        <section  class="hardfooter p-t-10" id="footer" style="background:#FA463E">
+        <section  id="footer" style="background:#FA463E">
           <div class="container">
             <div class="row">
               <div class="col-sm-6 p-t-10">
@@ -215,12 +180,18 @@
       <script>
       console.log('Love coding? We\'re hiring!');
       console.log('https://yumist.recruiterbox.com/');
-      // var footerDesktopStyle = "p-t-25 xs-p-b-20 hardfooter";
-      // var footerMobileStyle = "p-t-25 xs-p-b-20";
-      //  if(typeof window.orientation !== 'undefined'){
-      //    document.getElementById('footer').className = footerMobileStyle;
-      //  }else {
-      //     document.getElementById('footer').className = footerDesktopStyle;
-      //  }
+
+
+        $(document).ready(function() {
+
+        var docHeight = $(window).height();
+        var footerHeight = $('#footer').height();
+        var footerTop = $('#footer').position().top + footerHeight;
+
+        if (footerTop < docHeight) {
+        $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+        }
+        });
+
        </script>
   </html>
