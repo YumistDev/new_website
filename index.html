@@ -182,9 +182,10 @@
       console.log('https://yumist.recruiterbox.com/');
 
 
-        $(document).ready(function() {
+      $(window).resize(function() {
 
         var docHeight = $(window).height();
+        console.log(docHeight);
         var footerHeight = $('#footer').height();
         var footerTop = $('#footer').position().top + footerHeight;
 
@@ -192,6 +193,19 @@
         $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
         }
         });
+
+        $(document).ready(function() {
+
+          var docHeight = $(window).height();
+          console.log(docHeight);
+          var footerHeight = $('#footer').height();
+          var footerTop = $('#footer').position().top + footerHeight;
+
+          if (footerTop < docHeight) {
+          $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+          }
+          });
+
 
        </script>
   </html>
