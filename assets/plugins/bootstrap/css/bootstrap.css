@@ -5,6 +5,8 @@
  */
 
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -1300,6 +1302,14 @@ p {
   font-weight: 300;
   line-height: 1.4;
 }
+
+
+
+
+
+
+
+
 @media (min-width: 768px) {
   .lead {
     font-size: 21px;
