@@ -5407,9 +5407,9 @@ input.error:-webkit-autofill:focus,
 .iphone-border {
   position: absolute;
   left: 12px;
-  top: 47px;
+  top: 53px;
   right: 12px;
-  bottom: 76px;
+  bottom: 53px;
   height: auto;
   overflow-y: hidden;
 }
@@ -7080,7 +7080,7 @@ section.last:before {
   right: -80%;
 }
 .content-mask-md {
-  height: 500px;
+  height: 448px;
 }
 /*------------------------------------------------------------------
 [20. Demo : Only for demo pursposes]
