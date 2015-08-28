@@ -28,42 +28,18 @@ $("#contact_us_form").validate({
            },
            submitHandler: function (form) {
 
-      				url = 'mail_to.php';
+      				url = 'message.php';
       				var data = $("#contact_us_form").serialize();
-              console.log(data);
-              //
-      				// $(".btn").attr("disabled", true);
-              //
-      				// $.ajax({
-      				// 	type: "POST",
-      				// 	url: url,
-      				// 	data: data,
-      				// 	success : function(data){
-              //
-      				// 	data = $.parseJSON(data);
-              //
-      				// 		$(".btn").attr("disabled", false);
-      				// 		if(data.code == 200)
-      				// 		{
-      				// 			$("#errors").hide();
-      				// 			$("#errors").show();
-      				// 			$("#errors").append(data.message);
-      				// 		}
-      				// 		else
-      				// 		{
-      				// 			$("#errors").text(''); //TO NULLIFY PREVIOUS ERRORS
-      				// 			$.each(data.message,function(key1,value1)
-      				// 			{
-      				// 				$.each(value1, function(key2, value2){
-      				// 				$("#errors").append(value2+"<br>");
-      				// 				$("#errors").show();
-      				// 				});
-      				// 			});
-              //
-      				// 		}
-      				// 	},
 
-      				//})
+      				$.ajax({
+      					type: "POST",
+      					url: url,
+      					data: data,
+      					success : function(data){
+                  $("#contact_submit_button").text('SENT!');
+                  console.log(data);
+               }
+      				})
            }
        });
 
@@ -95,8 +71,17 @@ $("#contact_us_form").validate({
              					data: data,
              					success : function(data){
 
-                        $("#download_submit_button").text('SENT!');
-                        console.log(data);
+                        data = $.parseJSON(data);
+
+                        if(data.code == 900){
+                          $("#phone_number-error").show();
+                          $("#phone_number-error").text(data.message);
+                        }else if(data.code == 200)
+                        {
+                          $("#download_submit_button").text('SENT!');
+                          $("#phone_number-error").hide();
+                        }
+
              					},
 
              				})
