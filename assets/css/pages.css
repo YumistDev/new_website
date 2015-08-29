@@ -62,7 +62,6 @@ body.pace-white .pace .pace-progress {
 }
 .header.bottom {
   position: absolute;
-  bottom: 0;
   top: auto;
 }
 .header.bottom.affix {
@@ -862,7 +861,7 @@ body.pace-white .pace .pace-progress {
 }
 .jumbotron {
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
   display: block;
   padding: 0;
   margin-bottom: 0;
@@ -871,6 +870,7 @@ body.pace-white .pace .pace-progress {
 .jumbotron .inner {
   position: relative;
   z-index: 2;
+  padding-bottom: 20px;
 }
 .jumbotron.lg {
   height: 600px;
@@ -7088,7 +7088,7 @@ section.last:before {
   right: -80%;
 }
 .content-mask-md {
-  height: 425px;
+  height: 100%;
 }
 /*------------------------------------------------------------------
 [20. Demo : Only for demo pursposes]
@@ -7914,9 +7914,7 @@ sup.dollar {
   .header .menu > li > a > span:before {
     display: none;
   }
-  .header:last-child.header {
-    top: -200%;
-  }
+
   .header.bg-header .menu-content .header-inner {
     line-height: initial;
   }
@@ -8353,10 +8351,18 @@ sup.dollar {
   .row-same-height > [class*="col-sm"] {
     margin-bottom: -99999px;
     padding-bottom: 99999px;
+	}
+	.header.bottom {
+	bottom:0 !important;
+	}
+	
   }
 }
 /*** Phones ***/
 @media (max-width: 767px) {
+.header.bottom {
+	bottom:inherit !important;
+	}
   .container {
     padding-left: 20px;
     padding-right: 20px;
