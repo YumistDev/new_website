@@ -1,0 +1,24 @@
+html,
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.fullheight {
+  display: block;
+  position: relative;
+  background:#FA463E;
+  height: 100%;
+  width: 100%;
+}
+@media screen and (max-width: 778px) {
+#responsive-padding-headerText{padding-top:0px !important; text-align:center;}
+}
+@media (min-width: 768px){
+.hardfooter {
+  position: fixed;
+  height: 10%;
+  width: 100%;
+  bottom: 0px;
+}
+}
