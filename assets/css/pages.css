@@ -1620,7 +1620,6 @@ html {
 }
 body {
   color: #626262;
-  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 14px;
   font-weight: 300;
   letter-spacing: 0.01em;
@@ -1630,6 +1629,14 @@ body {
   -webkit-font-feature-settings: "kern" 1;
   -moz-font-feature-settings: "kern" 1;
 }
+
+/* adding the new font for yumist */
+@font-face {
+  font-family: 'GothamRnd-LightIta';
+  font-style: normal;
+  src: local('GothamRnd-LightIta'), local('GothamRnd-LightIta'), url("/assets/fonts/gothamrnd/GothamRnd-Lightlta") format('otf');
+}
+
 /* Headings
 ------------------------------------
 */
@@ -1640,7 +1647,7 @@ h4,
 h5,
 h6 {
   margin: 10px 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'GothamRnd-LightIta';
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1688,7 +1695,7 @@ h6.block {
   padding-bottom: 10px;
 }
 .block-title {
-  font-family: 'Montserrat';
+  font-family: 'GothamRnd-LightIta';
   font-weight: 400;
   font-size: 15px;
   text-transform: uppercase;
@@ -2304,7 +2311,7 @@ hr.dotted {
 [Buttons Base Styles]
 */
 .btn {
-  font-family: "Open Sans", sans-serif;
+  font-family: "GothamRnd-LightIta";
   font-size: 14px;
   font-weight: normal;
   letter-spacing: 0.01em;
@@ -4892,7 +4899,7 @@ fieldset[disabled] .form-control {
   margin-bottom: 10px;
 }
 .form-group label:not(.error) {
-  font-family: 'Montserrat';
+  font-family: 'GothamRnd-LightIta';
   font-size: 11px;
   text-transform: uppercase;
   font-weight: 600;
@@ -4920,7 +4927,7 @@ fieldset[disabled] .form-control {
 .form-group-default.required:after {
   color: #f55753;
   content: "*";
-  font-family: arial;
+  font-family: 'GothamRnd-LightIta';
   font-size: 20px;
   position: absolute;
   right: 15px;
@@ -8355,7 +8362,7 @@ sup.dollar {
 	.header.bottom {
 	bottom:0 !important;
 	}
-	
+
   }
 }
 /*** Phones ***/
