@@ -64,6 +64,7 @@ $("#contact_us_form").validate({
              				url = 'message.php';
              				var data = $("#phone_app_download_form").serialize();
 
+                    $("#download_submit_button").text('SENDING...');
 
              				$.ajax({
              					type: "POST",
@@ -74,6 +75,7 @@ $("#contact_us_form").validate({
                         data = $.parseJSON(data);
 
                         if(data.code == 900){
+                            $("#download_submit_button").text('GET THE APP!');
                           $("#phone_number-error").show();
                           $("#phone_number-error").text(data.message);
                         }else if(data.code == 200)
