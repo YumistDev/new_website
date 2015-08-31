@@ -76,7 +76,7 @@ if(isset($_POST['contact_hidden_field'])){
   $full_name = isset($_POST['full_name']) ? filter_var($_POST['full_name'], FILTER_SANITIZE_STRING): NULL;
   $phone = isset($_POST['phone']) ? $_POST['phone'] : NULL;
   $email = isset($_POST['email']) ? filter_var($_POST['email'], FILTER_SANITIZE_EMAIL) : NULL;
-  $message = isset($_POST['message']) ? trim(preg_replace('/\s+/', ' <br> ', $_POST['message'])) : NULL;
+  $message = isset($_POST['message']) ? trim(preg_replace('/\s+/', '  ', $_POST['message'])) : NULL;
 
   sendContactMail($full_name, $phone, $email, $message);
 }
@@ -86,7 +86,7 @@ if(isset($_POST['contact_hidden_field'])){
          $api_key = 'h-bMfII45OPZvGlaf5-Nyg';
          $subject = 'From One WebUser to a Yumist';
          $from = $email;
-         $to = 'hello@yumist.com';
+         $to = 'rishab@yumist.com';
 
          $uri = 'https://mandrillapp.com/api/1.0/messages/send-template.json';
          $postString = '{

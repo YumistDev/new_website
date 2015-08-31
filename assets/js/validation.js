@@ -9,7 +9,7 @@ $("#contact_us_form").validate({
 							 required: true,
                maxlength : 50
 						 },
-             phone_number : {
+             phone : {
                maxlength: 10,
                minlength: 10
              },
@@ -24,19 +24,21 @@ $("#contact_us_form").validate({
            },
            messages:
            {
-               phone_number: { min: "Enter your 10 digit phone number" }
+               phone_number: "Enter your 10 digit phone number"
            },
            submitHandler: function (form) {
 
       				url = 'message.php';
       				var data = $("#contact_us_form").serialize();
 
+              $("#contact_submit_button").text('SUBMITTING..');
+
       				$.ajax({
       					type: "POST",
       					url: url,
       					data: data,
       					success : function(data){
-                  $("#contact_submit_button").text('SENT!');
+                  $("#contact_submit_button").text('SUBMITTED');
                   console.log(data);
                }
       				})
@@ -75,7 +77,7 @@ $("#contact_us_form").validate({
                         data = $.parseJSON(data);
 
                         if(data.code == 900){
-                            $("#download_submit_button").text('GET THE APP!');
+                          $("#download_submit_button").text('GET THE APP!');
                           $("#phone_number-error").show();
                           $("#phone_number-error").text(data.message);
                         }else if(data.code == 200)
