@@ -1,0 +1,14 @@
+
+/* adding the new font for yumist */
+.social-icon{
+	moz-transition : all 0.25s;
+	webkit-transition : all 0.25s;
+	transition : all 0.25s;
+	font-size: 20px;
+	border-radius: 5px;
+}
+
+.social-icon:hover{
+	box-shadow: 0px 2px 2px #ffffff;
+}
+
