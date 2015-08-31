@@ -1,12 +1,13 @@
 $( document ).ready(function() {
-  $("#areas").click(function(){
+  $("#areas").on('click',function(){
+          $("#map_view").load('map_test.html');
+          $("#map_view").show();
           $("#main").hide();
-          $("#areas_section").show();
   })
 
-  $("#home").click(function(){
+  $("#home").on('click',function(){
           $("#main").show();
-          $("#areas_section").hide();
+          $("#map_view").hide();
   })
 
   $.ajax({
@@ -20,7 +21,6 @@ $( document ).ready(function() {
             $("#"+key2).append("<div class='col-md-3'>" + value2 +"</div>");
         });
       });
-
    }
   })
 
