@@ -69,11 +69,64 @@
             </div>
             </div>
             </div>
-  		    <nav class="header bottom md-header xs-header"  data-pages="header" style="height:84px;background:#FA463E">
+          </section>
+
+          <section class="bg-master-lightest main-section" id="areas_section" style="display:none">
+            <div class="container">
+                <div class="row">
+                  <div class="col-sm-12  m-t-50 m-b-50 xs-t-10">
+                    <div class="panel">
+                        <ul class="nav nav-tabs nav-tabs-simple" role="tablist">
+                          <li class="active"><a href="#tab2hellowWorld" data-toggle="tab" role="tab" aria-expanded="true">Hello World</a>
+                          </li>
+                          <li class=""><a href="#tab2FollowUs" data-toggle="tab" role="tab" aria-expanded="false">Hello Two</a>
+                          </li>
+                          <li class=""><a href="#tab2Inspire" data-toggle="tab" role="tab" aria-expanded="false">Hello Three</a>
+                          </li>
+                        </ul>
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="tab2hellowWorld">
+                            <div class="row column-seperation">
+                              <div class="col-md-12">
+                                <h5 id="Gurgaon"></h5>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tab-pane" id="tab2FollowUs">
+                            <div class="row">
+                              <div class="col-md-12">
+                                <h5 id="Delhi"></h5>
+                                <p>A style represents visual customizations on top of a layout. By editing a style, you can use Squarespace's visual interface to customize your...</p>
+                                <br>
+                                <p class="pull-right">
+                                  <button type="button" class="btn btn-default btn-cons">White</button>
+                                  <button type="button" class="btn btn-success btn-cons">Success</button>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tab-pane" id="tab2Inspire">
+                            <div class="row">
+                              <div class="col-md-12">
+                                <h5 id="Bangalore"></h5>
+
+                                <br>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                     </div>
+
+                </div>
+            </div>
+          </section>
+
+          <nav class="header bottom md-header xs-header"  data-pages="header" style="height:84px;background:#FA463E">
           <div class="container relative">
 
-              <h6 class="block-title text-white m-t-35 m-b-10 p-b-5 fs-14">
-                  <span><a href="http://yumist.recruiterbox.com/" target="_blank" class="text-white  p-r-10 b-r b-white">We're Hiring</a> <a href="https://play.google.com/store/apps/details?id=com.slashg.yumist&hl=en" target="_blank" class="text-white p-l-10 p-r-10 b-r b-white">Download</a> <a  data-toggle="modal" data-target="#contact_us" class="text-white p-l-10 ">Contact Us</a>
+              <h6 class="block-title text-white m-t-35 m-b-10 p-b-5 fs-12">
+                  <span><a href="http://yumist.recruiterbox.com/" target="_blank" class="text-white  p-r-10 b-r b-white">We're Hiring</a> <a href="https://play.google.com/store/apps/details?id=com.slashg.yumist&hl=en" target="_blank" class="text-white p-l-10 p-r-10 b-r b-white">Download</a> <a  data-toggle="modal" data-target="#contact_us" class="text-white p-l-10 p-r-10 b-r b-white">Contact Us</a> <a class="text-white p-l-10" id="areas">Areas</a>
                   </span>
                   <span class="pull-right xs-pull-left xs-p-t-10">
                     <a href="http://www.facebook.com/yumistcom" target="_blank"  class="text-white"><i class="fa fa-facebook-square fs-20"  class="text-white"></a></i>
@@ -85,7 +138,9 @@
             </div>
 
     </nav>
-    </section>
+
+
+
 
         <div class="modal fade slide-up disable-scroll" id="other_apps" tabindex="-1" role="dialog" aria-hidden="false">
             <div class="modal-dialog modal-sm">
@@ -172,9 +227,32 @@
       <script type="text/javascript" src="assets/js/slider.js"></script>
 
       <script type="text/javascript" src="assets/js/validation.js"></script>
+      <script type="text/javascript" src="assets/js/validation.js"></script>
       <script>
         console.log('Love coding? We\'re hiring!');
         console.log('https://yumist.recruiterbox.com/');
+        $( document ).ready(function() {
+          $("#areas").click(function(){
+                  $("#main").hide();
+                  $("#areas_section").show();
+          })
+
+          $.ajax({
+            type: "GET",
+            url: 'cities.php',
+            success : function(data){
+              data = $.parseJSON(data);
+              console.log(data);
+              $.each( data, function( key1, value1 ) {
+                $.each( value1, function( key2, value2 ) {
+                  $("#"+key2).append(value2 + "<br>");
+                });
+              });
+
+           }
+          })
+
+        });
        </script>
 
   	 </body>
