@@ -1,4 +1,33 @@
+$( document ).ready(function() {
+  $("#areas").click(function(){
+          $("#main").hide();
+          $("#areas_section").show();
+  })
 
+  $("#home").click(function(){
+          $("#main").show();
+          $("#areas_section").hide();
+  })
+
+  $.ajax({
+    type: "GET",
+    url: 'cities.php',
+    success : function(data){
+      data = $.parseJSON(data);
+
+      $.each( data, function( key1, value1 ) {
+        $.each( value1, function( key2, value2 ) {
+            $("#"+key2).append("<div class='col-md-3'>" + value2 +"</div>");
+        });
+      });
+
+   }
+  })
+
+});
+
+console.log('Love coding? We\'re hiring!');
+console.log('https://yumist.recruiterbox.com/');
 
 $("#contact_us_form").validate({
 
@@ -77,7 +106,7 @@ $("#contact_us_form").validate({
                         data = $.parseJSON(data);
 
                         if(data.code == 900){
-                          $("#download_submit_button").text('GET THE APP!');
+                          $("#download_submit_button").text('GET THE APP');
                           $("#phone_number-error").show();
                           $("#phone_number-error").text(data.message);
                         }else if(data.code == 200)
