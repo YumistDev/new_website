@@ -1,0 +1,12 @@
+
+/* adding the new font for yumist */
+@font-face {
+  font-family: "myFont";
+  font-style: normal;
+  src: url("../fonts/gothamrnd/gotham_light.otf");
+}
+
+body{
+	font-family : "myFont";
+	color : "#dd0000";
+}
