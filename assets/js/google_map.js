@@ -135,18 +135,19 @@
 
         var ctaLayer = new google.maps.KmlLayer({
           url: url,
-          map: map
+          map: map,
+          preserveViewport: true
         });
 
 
     }
 
     $(document).ready(function() {
-      var minZoomLevel = 7;
-      var maxZoomLevel = 16;
+      var minZoomLevel = 5;
+      var maxZoomLevel = 17;
 
-      var latitude =  28.4700;
-      var longitude = 77.0300;
+      var latitude =  28.4591869;
+      var longitude = 77.07254569999998;
 
         $('#map-zoom-in').click(function() {
             if(maxZoomLevel > zoomLevel)
@@ -167,7 +168,7 @@
 
         $("#DelhiTabButton").click(function(){
           var delhi_url = 'http://www.yumist.com/kml/Delhi.kml';
-          init(28.6139,77.2090,delhi_url);
+          init(28.5443,77.2397,delhi_url);
         })
 
         $("#BangaloreTabButton").click(function(){
