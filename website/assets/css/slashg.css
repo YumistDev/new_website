@@ -1,0 +1,66 @@
+
+/* adding the new font for yumist */
+.social-icon{
+	moz-transition : all 0.25s;
+	webkit-transition : all 0.25s;
+	transition : all 0.25s;
+	font-size: 20px;
+	border-radius: 5px;
+}
+
+.social-icon:hover{
+	box-shadow: 0px 2px 4px rgba(255,255,255,0.5);
+}
+
+.red-foreground{
+	background: #FA463E !important;
+	color: white !important;
+	box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
+}
+
+#screenshot-frame{
+	height: 450px;
+}
+
+#screenshot-holder{
+
+	height: 354px;
+}
+
+.line-spacing-extra{
+	line-height: 150%;
+}
+
+/* adding new media queries in SlashG.css for adjusting footer */
+
+@media (max-width: 1280px){
+.footer{
+bottom:inherit;
+}
+}
+.m-t-100 {
+    margin-top: 100px;
+
+}
+
+
+@media (max-width: 480px){
+.fs-14 {
+    font-size: 10px !important;
+}
+}
+
+.footer{
+text-align:center;
+}
+.xs-pull-left {
+    float: none !important;
+}
+.p-b-5 {
+    padding-bottom: 10px !important;
+}
+
+.top8-rel{
+position:relative;
+top:8px;
+}
