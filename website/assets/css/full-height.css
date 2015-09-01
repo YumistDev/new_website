@@ -1,0 +1,18 @@
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
+body {
+  position: relative;
+  background:#EF4942;
+  margin: 0;
+  padding: 0;
+}
+.fullheight {
+  display: block;
+  position: relative;
+  background:#EF4942;
+  height: 100%;
+  width: 100%;
+}
