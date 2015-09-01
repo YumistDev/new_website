@@ -12,6 +12,7 @@
              // How zoomed in you want the map to start at (always required)
              zoom: zoomLevel,
              disableDefaultUI: true,
+             draggable: true,
              // The latitude and longitude to center the map (always required)
              center: new google.maps.LatLng(latitude,longitude),
 
