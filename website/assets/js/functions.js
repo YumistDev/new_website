@@ -1,30 +1,3 @@
-$( document ).ready(function() {
-  $("#areas").on('click',function(){
-          $("#map_view").load('map_test.html');
-          $("#map_view").show();
-          $("#main").hide();
-  })
-
-  $("#home").on('click',function(){
-          $("#main").show();
-          $("#map_view").hide();
-  })
-
-  $.ajax({
-    type: "GET",
-    url: 'cities.php',
-    success : function(data){
-      data = $.parseJSON(data);
-
-      $.each( data, function( key1, value1 ) {
-        $.each( value1, function( key2, value2 ) {
-            $("#"+key2).append("<div class='col-md-3'>" + value2 +"</div>");
-        });
-      });
-   }
-  })
-
-});
 
 console.log('Love coding? We\'re hiring!');
 console.log('https://yumist.recruiterbox.com/');
@@ -57,7 +30,7 @@ $("#contact_us_form").validate({
            },
            submitHandler: function (form) {
 
-      				url = 'message.php';
+      				url = '../website/message.php';
       				var data = $("#contact_us_form").serialize();
 
               $("#contact_submit_button").text('SUBMITTING..');
@@ -68,7 +41,9 @@ $("#contact_us_form").validate({
       					data: data,
       					success : function(data){
                   $("#contact_submit_button").text('SUBMITTED');
-                  console.log(data);
+                  $("#contact_us").find('form')[0].reset();
+                  $("#contact_us").modal('hide');
+                  $("#contact_submit_button").text('SUBMIT');
                }
       				})
            }
@@ -92,7 +67,7 @@ $("#contact_us_form").validate({
                   },
                   submitHandler: function (form) {
 
-             				url = 'message.php';
+             				url = '../website/message.php';
              				var data = $("#phone_app_download_form").serialize();
 
                     $("#download_submit_button").text('SENDING...');
