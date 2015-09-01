@@ -172,9 +172,8 @@
         })
 
         $("#BangaloreTabButton").click(function(){
-          console.log('1');
           var bangalore_url = 'http://www.yumist.com/kml/Bangalore.kml';
-          init(12.9608,77.6361,bangalore_url);
+          init(12.9385333,77.6450215,bangalore_url);
         })
     });
 
