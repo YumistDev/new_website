@@ -86,7 +86,7 @@ if(isset($_POST['contact_hidden_field'])){
          $api_key = 'h-bMfII45OPZvGlaf5-Nyg';
          $subject = 'Contact Us Form - Website';
          $from = $email;
-         $to = 'rishab@yumist.com';
+         $to = 'hello@yumist.com';
 
          $uri = 'https://mandrillapp.com/api/1.0/messages/send-template.json';
          $postString = '{
