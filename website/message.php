@@ -78,15 +78,15 @@ if(isset($_POST['contact_hidden_field'])){
   $email = isset($_POST['email']) ? filter_var($_POST['email'], FILTER_SANITIZE_EMAIL) : NULL;
   $message = isset($_POST['message']) ? trim(preg_replace('/\s+/', '  ', $_POST['message'])) : NULL;
 
-  sendContactMail($full_name, $phone, $email, $message);
+  sendContactMail($full_name, $phone, $email, $message, $db_yumist);
 }
 
- function sendContactMail($full_name, $phone,$email, $message) {
+ function sendContactMail($full_name, $phone,$email, $message, $db_yumist) {
 
          $api_key = 'h-bMfII45OPZvGlaf5-Nyg';
          $subject = 'Contact Us Form - Website';
          $from = $email;
-         $to = 'hello@yumist.com';
+         $to = 'rishab@yumist.com';
 
          $uri = 'https://mandrillapp.com/api/1.0/messages/send-template.json';
          $postString = '{
@@ -134,9 +134,20 @@ if(isset($_POST['contact_hidden_field'])){
          curl_setopt($ch, CURLOPT_POST, true);
          curl_setopt($ch, CURLOPT_POSTFIELDS, $postString);
          $result = curl_exec($ch);
+        $date = date('Y-m-d H:i:s',strtotime('Today'));
 
-         if($result)
-             echo 'Sent';
+         if($result){
+
+           $sql = $db_yumist->prepare("INSERT INTO `contact_us_website` (email, phone, full_name, message,created_at) VALUES (:email,:phone, :full_name, :message, :created_at)");
+           $sql->bindParam(':email',$from,PDO::PARAM_STR);
+           $sql->bindParam(':phone',$phone,PDO::PARAM_STR);
+           $sql->bindParam(':full_name',$full_name,PDO::PARAM_STR);
+           $sql->bindParam(':message',$message,PDO::PARAM_STR);
+           $sql->bindParam(':created_at',$date,PDO::PARAM_STR);
+           $sql->execute();
+            echo 'Sent';
+         }
+
          else
              echo 'Not Sent';
 
