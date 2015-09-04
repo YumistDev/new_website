@@ -1,5 +1,5 @@
 
-console.log('Love coding? We\'re hiring!');
+console.log('Love coding? We\'re hiring.');
 console.log('https://yumist.recruiterbox.com/');
 
 $("#contact_us_form").validate({
@@ -86,7 +86,7 @@ $("#contact_us_form").validate({
                           $("#phone_number-error").text(data.message);
                         }else if(data.code == 200)
                         {
-                          $("#download_submit_button").text('SENT!');
+                          $("#download_submit_button").text('SENT');
                           $("#phone_number-error").hide();
                         }
 
