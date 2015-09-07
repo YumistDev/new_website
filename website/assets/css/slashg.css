@@ -31,6 +31,20 @@
 	line-height: 150%;
 }
 
+.animate-slide-in-right{
+	/* Additional style for adding slide animation to screenshots */
+	animation: slideinright 0.5s ease;
+	position: absolute;
+	left: 0;
+	box-shadow: 0px 0px 25px #000000;
+	overflow: hidden;
+}
+
+@keyframes slideinright{
+	from {left: 100px;}
+	to {left: 0px;}
+}
+
 /* adding new media queries in SlashG.css for adjusting footer */
 
 .fullheight{

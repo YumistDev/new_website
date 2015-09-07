@@ -4360,7 +4360,7 @@ input.error:-webkit-autofill:focus,
   right: 11px;
   bottom: 47px;
   height: auto;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 .iphone-border > img {
   -webkit-transition: all 0.3s ease;
